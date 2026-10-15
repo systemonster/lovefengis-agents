@@ -3,16 +3,41 @@
   "name": "com.lovefengis/mcp",
   "title": "lovefengis",
   "description": "Services and prices of lovefengis, a software studio in Izmir, Turkey. Read-only, no auth.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "websiteUrl": "https://lovefengis.com/gelistirici/mcp",
   "repository": {
     "url": "https://github.com/systemonster/lovefengis-agents",
     "source": "github"
   },
   "icons": [
-    { "src": "https://lovefengis.com/icon-512.png", "mimeType": "image/png", "sizes": ["512x512"] }
+    {
+      "src": "https://lovefengis.com/icon-512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    }
   ],
   "remotes": [
-    { "type": "streamable-http", "url": "https://lovefengis.com/mcp" }
+    {
+      "type": "streamable-http",
+      "url": "https://lovefengis.com/mcp"
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "lovefengis",
+      "version": "1.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ]
+    }
   ]
 }
