@@ -5,6 +5,7 @@ import { readFileSync, realpathSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
 const API = (process.env.LOVEFENGIS_API_URL || 'https://lovefengis.com/api/v1').replace(/\/+$/, '')
+const MCP = (process.env.LOVEFENGIS_MCP_URL || 'https://lovefengis.com/mcp').replace(/\/+$/, '')
 const SURUM = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version
 const DONEMLER = ['one_time', 'monthly', 'yearly']
 const KIMLIK = /^[a-z0-9]+(-[a-z0-9]+)*$/
@@ -16,6 +17,7 @@ Usage
   lovefengis service <id>                  Show one service
   lovefengis pricing [--service <id>] [--period one_time|monthly|yearly]
   lovefengis docs                          Print developer documentation links
+  lovefengis mcp                           Run the lovefengis MCP server over stdio (bridge to ${MCP})
 
 Options
   --json       Print the raw API JSON (for scripts and agents)
@@ -85,6 +87,30 @@ export function fiyatSatiri(p) {
 
 const hizmetMetni = (h) => [`${h.name}  [${h.id}]`, ...h.prices.map(fiyatSatiri), `  ${h.url}`].join('\n')
 
+// stdio MCP köprüsü: her satır bir JSON-RPC iletisi; uzak Streamable HTTP sunucusuna POST edilir, cevap
+// tek satır olarak stdout'a yazılır. Bildirimlere (id'siz) sunucu gövdesiz döner, satır yazılmaz.
+export async function mcpIlet(satir, gonder = fetch) {
+  let ileti
+  try { ileti = JSON.parse(satir) } catch { return JSON.stringify({ jsonrpc: '2.0', id: null, error: { code: -32700, message: 'Parse error' } }) }
+  try {
+    const yanit = await gonder(MCP, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json, text/event-stream', 'User-Agent': `lovefengis-cli/${SURUM}` }, body: JSON.stringify(ileti) })
+    const metin = (await yanit.text()).trim()
+    return metin || null
+  } catch (e) {
+    return ileti && ileti.id !== undefined ? JSON.stringify({ jsonrpc: '2.0', id: ileti.id, error: { code: -32603, message: `could not reach ${MCP}: ${e.cause?.code || e.message}` } }) : null
+  }
+}
+
+async function mcpKoprusu() {
+  const { createInterface } = await import('node:readline')
+  const satirlar = createInterface({ input: process.stdin, crlfDelay: Infinity })
+  for await (const satir of satirlar) {
+    if (!satir.trim()) continue
+    const cevap = await mcpIlet(satir)
+    if (cevap) process.stdout.write(`${cevap}\n`)
+  }
+}
+
 export async function calistir(argv, yaz = console.log) {
   const a = argumanlariAyir(argv)
   if (a.surum) return yaz(SURUM)
@@ -104,6 +130,8 @@ export async function calistir(argv, yaz = console.log) {
     case 'prices':
       return cikti(await getir('/fiyatlar', { service: a.service, period: a.period }), (v) =>
         v.data.length ? v.data.map((p) => `${p.service_name}\n${fiyatSatiri(p)}`).join('\n') : 'No prices match.')
+    case 'mcp':
+      return mcpKoprusu()
     case 'docs':
       return a.json ? yaz(JSON.stringify(Object.fromEntries(BELGELER), null, 2)) : yaz(BELGELER.map(([ad, u]) => `${ad}: ${u}`).join('\n'))
     default:

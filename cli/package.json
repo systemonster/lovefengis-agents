@@ -1,7 +1,7 @@
 {
   "name": "lovefengis",
-  "version": "1.0.1",
-  "description": "Official lovefengis CLI: list services and prices of lovefengis (software studio, Izmir, Turkey) from the terminal. Read-only client for the lovefengis REST API.",
+  "version": "1.1.0",
+  "description": "Official lovefengis CLI and stdio MCP server: list services and prices of lovefengis (software studio, Izmir, Turkey). Read-only client for the lovefengis REST API and MCP server.",
   "type": "module",
   "bin": {
     "lovefengis": "bin/lovefengis.mjs"
@@ -34,5 +34,6 @@
     "type": "git",
     "url": "git+https://github.com/systemonster/lovefengis-agents.git",
     "directory": "cli"
-  }
+  },
+  "mcpName": "com.lovefengis/mcp"
 }
