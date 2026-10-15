@@ -1,0 +1,38 @@
+{
+  "name": "lovefengis",
+  "version": "1.0.1",
+  "description": "Official lovefengis CLI: list services and prices of lovefengis (software studio, Izmir, Turkey) from the terminal. Read-only client for the lovefengis REST API.",
+  "type": "module",
+  "bin": {
+    "lovefengis": "bin/lovefengis.mjs"
+  },
+  "exports": "./bin/lovefengis.mjs",
+  "files": [
+    "bin",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "lovefengis",
+    "cli",
+    "api",
+    "mcp",
+    "pricing",
+    "software",
+    "turkey",
+    "ai-agents"
+  ],
+  "homepage": "https://lovefengis.com/gelistirici/cli",
+  "bugs": {
+    "email": "hello@lovefengis.com"
+  },
+  "author": "lovefengis <hello@lovefengis.com> (https://lovefengis.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/systemonster/lovefengis-agents.git",
+    "directory": "cli"
+  }
+}

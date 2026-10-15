@@ -1,0 +1,15 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "lovefengis",
+  "version": "1.0.0",
+  "description": "Look up the services and prices of lovefengis (software studio, Izmir, Turkey) through Agent Skills and the lovefengis MCP server. Read-only, no credentials.",
+  "author": {
+    "name": "lovefengis",
+    "email": "hello@lovefengis.com",
+    "url": "https://lovefengis.com"
+  },
+  "homepage": "https://lovefengis.com/gelistirici",
+  "repository": "https://github.com/systemonster/lovefengis-agents",
+  "license": "MIT",
+  "keywords": ["lovefengis", "pricing", "services", "mcp", "software", "turkey"]
+}
