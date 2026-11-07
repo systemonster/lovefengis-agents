@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
   "name": "com.lovefengis/mcp",
   "title": "lovefengis",
-  "description": "Services and prices of lovefengis, a software studio in Izmir, Turkey. Read-only, no auth.",
-  "version": "1.1.0",
+  "description": "Services and prices of lovefengis, a remote digital agency serving Turkey. Read-only, no auth.",
+  "version": "1.1.1",
   "websiteUrl": "https://lovefengis.com/gelistirici/mcp",
   "repository": {
     "url": "https://github.com/systemonster/lovefengis-agents",
