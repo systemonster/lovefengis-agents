@@ -2,7 +2,7 @@
 
 <!-- mcp-name: com.lovefengis/mcp -->
 
-Official command-line client for the [lovefengis REST API](https://lovefengis.com/gelistirici/api). It lists the services and prices of lovefengis, a software studio in Izmir, Turkey. Read-only, no API key, no personal data.
+Official command-line client for the [lovefengis REST API](https://lovefengis.com/gelistirici/api). It lists the services and prices of lovefengis, a remote digital agency serving Turkey. Read-only, no API key, no personal data.
 
 ```sh
 npx lovefengis services

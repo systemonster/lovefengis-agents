@@ -4,7 +4,7 @@ Instructions for AI coding agents (Claude Code, Codex, Cursor, Windsurf, Copilot
 
 ## What lovefengis is
 
-A software studio in Izmir, Turkey. It sells custom software, web and automation services. The public API describes those services and their prices.
+A digital agency serving businesses across Turkey remotely. Its main services are ad management and SEO; it also offers corporate websites, custom corporate software, a support assistant and AI consulting. The public API describes those services and their prices.
 
 ## How to get data
 

@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "lovefengis",
   "version": "1.0.0",
-  "description": "Look up the services and prices of lovefengis (software studio, Izmir, Turkey) through Agent Skills and the lovefengis MCP server. Read-only, no credentials.",
+  "description": "Services and prices of lovefengis, a remote digital agency serving Turkey. Read-only, no auth.",
   "author": {
     "name": "lovefengis",
     "email": "hello@lovefengis.com",

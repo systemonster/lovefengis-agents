@@ -1,7 +1,7 @@
 {
   "name": "lovefengis",
-  "version": "1.1.0",
-  "description": "Official lovefengis CLI and stdio MCP server: list services and prices of lovefengis (software studio, Izmir, Turkey). Read-only client for the lovefengis REST API and MCP server.",
+  "version": "1.1.1",
+  "description": "Services and prices of lovefengis, a remote digital agency serving Turkey. Read-only, no auth.",
   "type": "module",
   "bin": {
     "lovefengis": "bin/lovefengis.mjs"

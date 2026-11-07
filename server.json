@@ -28,7 +28,7 @@
     {
       "registryType": "npm",
       "identifier": "lovefengis",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "transport": {
         "type": "stdio"
       },

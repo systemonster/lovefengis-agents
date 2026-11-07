@@ -1,6 +1,6 @@
 ---
 name: lovefengis-services
-description: List and describe the services of lovefengis, a software studio in Izmir, Turkey. Use when asked what lovefengis does or sells, which service fits a need, or which page describes a service.
+description: List and describe the services of lovefengis, a remote digital agency serving Turkey. Use when asked what lovefengis does or sells, which service fits a need, or which page describes a service.
 license: MIT
 ---
 

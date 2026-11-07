@@ -1,6 +1,6 @@
 # lovefengis (Python)
 
-Official Python client for the [lovefengis REST API](https://lovefengis.com/gelistirici/api): the services and prices of lovefengis, a software studio in Izmir, Turkey. Public, read-only, no API key, no dependencies.
+Official Python client for the [lovefengis REST API](https://lovefengis.com/gelistirici/api): the services and prices of lovefengis, a remote digital agency serving Turkey. Public, read-only, no API key, no dependencies.
 
 ```sh
 pip install lovefengis

@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "lovefengis"
-version = "1.0.0"
-description = "Official Python client for the lovefengis REST API: services and prices of lovefengis (software studio, Izmir, Turkey). Read-only, no API key."
+version = "1.0.1"
+description = "Services and prices of lovefengis, a remote digital agency serving Turkey. Read-only, no auth."
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.9"

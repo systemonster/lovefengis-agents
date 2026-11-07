@@ -1,7 +1,7 @@
 """Official Python client for the lovefengis REST API (https://lovefengis.com/gelistirici/api).
 
 The API is public and read-only. It lists the services and prices of lovefengis,
-a software studio in Izmir, Turkey. No API key is needed.
+a remote digital agency serving Turkey. No API key is needed.
 """
 
 from __future__ import annotations
@@ -13,7 +13,7 @@ import urllib.request
 from typing import Any, Dict, List, Optional
 
 __all__ = ["Client", "LovefengisError", "DEFAULT_BASE_URL"]
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 DEFAULT_BASE_URL = "https://lovefengis.com/api/v1"
 PERIODS = ("one_time", "monthly", "yearly")
