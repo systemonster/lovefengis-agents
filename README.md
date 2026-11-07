@@ -1,6 +1,6 @@
 # lovefengis agent kit
 
-Official agent tooling for [lovefengis](https://lovefengis.com), a software studio in Izmir, Turkey: the `lovefengis` CLI, Agent Skills, an Agent Plugin manifest and the MCP configuration.
+Official agent tooling for [lovefengis](https://lovefengis.com), a digital agency serving businesses across Turkey remotely. Its main services are ad management and SEO; it also offers corporate websites, custom corporate software, a support assistant and AI consulting. This repository holds the `lovefengis` CLI, Agent Skills, an Agent Plugin manifest and the MCP configuration.
 
 Everything here talks to public, read-only endpoints. No API key, no sign-up, no personal data.
 
